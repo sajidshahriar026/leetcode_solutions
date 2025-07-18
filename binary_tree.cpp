@@ -22,6 +22,8 @@ int calculateHeight(TreeNode *root);
 vector<int> getLeaves(TreeNode *root);
 int goodNodes(TreeNode *root, int threshold);
 
+bool leafSimilar(TreeNode *root1, TreeNode *root2);
+
 
 int main()
 {
@@ -221,6 +223,16 @@ int calculateHeight(TreeNode *root)
 
     return 1 + maxHeight;
 }
+
+bool leafSimilar(TreeNode* root1, TreeNode* root2){
+
+    vector<int> leaves1 = getLeaves(root1);
+    vector<int> leaves2 = getLeaves(root2);
+
+    return leaves1 == leaves2;
+
+}
+
 
 vector<int> getLeaves(TreeNode *root)
 {
